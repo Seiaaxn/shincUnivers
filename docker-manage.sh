@@ -140,7 +140,7 @@ case "${1:-}" in
         health
         ;;
     *)
-        echo "Kanata Toon - Docker Management Script"
+        echo "ShinVerse - Docker Management Script"
         echo ""
         echo "Usage: $0 [command] [options]"
         echo ""
