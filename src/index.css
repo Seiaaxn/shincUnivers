@@ -41,7 +41,7 @@
 
 @layer components {
   .navbar-link-item {
-    @apply min-w-max block py-2 px-3 text-zinc-900 rounded hover:bg-zinc-100 md:hover:bg-transparent md:hover:text-orange-700 md:p-0 md:dark:hover:text-orange-500 dark:text-white dark:hover:bg-zinc-700 dark:hover:text-white md:dark:hover:bg-transparent;
+    @apply min-w-max block py-2 px-3 text-zinc-900 rounded hover:bg-zinc-100 md:p-0 md:hover:bg-transparent md:hover:text-orange-700 dark:text-white dark:hover:bg-zinc-700 dark:hover:text-white md:dark:hover:bg-transparent md:dark:hover:text-orange-500;
     transition: color 0.2s;
   }
 
@@ -50,11 +50,20 @@
   }
 
   .card-comic {
-    @apply group relative bg-white dark:bg-zinc-900 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-orange-400 dark:hover:border-orange-600 transition-all duration-300 hover:shadow-lg;
+    @apply relative bg-white dark:bg-zinc-900 rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800 transition-all duration-300;
+  }
+
+  .card-comic:hover {
+    @apply border-orange-400 dark:border-orange-600 shadow-lg;
   }
 
   .card-comic-img {
-    @apply aspect-[2/3] object-cover w-full h-full group-hover:brightness-90 transition-all duration-300;
+    @apply object-cover w-full h-full transition-all duration-300;
+    aspect-ratio: 2 / 3;
+  }
+
+  .card-comic:hover .card-comic-img {
+    filter: brightness(0.85);
   }
 
   .section-title {
@@ -62,15 +71,22 @@
   }
 
   .btn-primary {
-    @apply w-full text-white bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 font-medium rounded-md text-sm py-2 text-center transition-all duration-200;
+    @apply w-full text-white font-medium rounded-md text-sm py-2 text-center transition-all duration-200;
+    background: linear-gradient(to right, #f59e0b, #ea580c);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(to right, #d97706, #c2410c);
   }
 
   .badge-chapter {
-    @apply absolute text-white top-1 left-1 text-xs font-bold py-1 px-2 bg-gradient-to-r from-sky-500 to-sky-700 rounded-md;
+    @apply absolute text-white top-1 left-1 text-xs font-bold py-1 px-2 rounded-md;
+    background: linear-gradient(to right, #0ea5e9, #0369a1);
   }
 
   .badge-trending {
-    @apply absolute text-white top-1 left-1 text-xs font-bold py-1 px-2 bg-gradient-to-r from-amber-500 to-orange-600 rounded-md;
+    @apply absolute text-white top-1 left-1 text-xs font-bold py-1 px-2 rounded-md;
+    background: linear-gradient(to right, #f59e0b, #ea580c);
   }
 
   .widget-title-bar {
@@ -113,4 +129,3 @@
   }
   @keyframes rotate { 100% { transform: rotate(360deg); } }
     }
-    
