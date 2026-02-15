@@ -20,7 +20,7 @@ services:
       dockerfile: server/Dockerfile
     ports:
       - "8062:8062"
-    container_name: kanata-toon-backend
+    container_name: shin-verse-backend
     environment:
       - PORT=8062
       - NODE_ENV=production
